@@ -1,0 +1,63 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0E0E0"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:paddingTop="7dp"
+        android:text="Faltam 2 refeições"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"/>
+
+    <in.arjsna.swipecardlib.SwipeCardView
+        android:id="@+id/card_stack_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:bottom_swipe_detect="false"
+        app:rotation_degrees="15.5"
+        app:top_swipe_detect="false"
+        tools:context=".CardSwipeActivity"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <com.sackcentury.shinebuttonlib.ShineButton
+            android:id="@+id/left"
+            shine_animation_duration="10"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="38dp"
+            android:src="@android:color/darker_gray"
+            app:allow_random_color="false"
+            app:btn_color="@android:color/darker_gray"
+            app:btn_fill_color="@android:color/holo_green_dark"
+            app:siShape="@raw/heart"/>
+
+        <com.sackcentury.shinebuttonlib.ShineButton
+            android:id="@+id/right"
+            shine_animation_duration="1"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="38dp"
+            android:src="@android:color/darker_gray"
+            app:allow_random_color="false"
+            app:btn_color="@android:color/darker_gray"
+            app:btn_fill_color="@android:color/holo_red_dark"
+            app:siShape="@drawable/dislike_360"/>
+    </LinearLayout>
+</LinearLayout>
+
