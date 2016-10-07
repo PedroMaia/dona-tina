@@ -9,13 +9,14 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:textStyle="bold"
+        android:layout_height="70dp"
+        android:background="#5C6BC0"
         android:gravity="center"
-        android:paddingTop="7dp"
+        android:padding="8dp"
         android:text="Faltam 2 refeições"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"/>
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
 
     <in.arjsna.swipecardlib.SwipeCardView
         android:id="@+id/card_stack_view"
@@ -23,7 +24,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         app:bottom_swipe_detect="false"
-        app:rotation_degrees="15.5"
+        app:rotation_degrees="16.5"
         app:top_swipe_detect="false"
         tools:context=".CardSwipeActivity"/>
 

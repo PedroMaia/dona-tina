@@ -32,7 +32,8 @@ public class CardsAdapter extends ArrayAdapter<Card> {
         View view = layoutInflater.inflate(R.layout.item, parent, false);
         ((ImageView)view.findViewById(R.id.card_image)).setImageResource(card.imageId);
         ((TextView)view.findViewById(R.id.tv_title)).setText("Arroz de pato");
-        ((TextView)view.findViewById(R.id.tv_description)).setText("Refeição de carne");
+        ((TextView)view.findViewById(R.id.tv_description)).setText("Refeição de " +
+                "carne (50 min)");
         return view;
     }
 
