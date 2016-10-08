@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:id="@+id/activity_record_meal_config"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:orientation="vertical"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.app.donatina.donatina.RecordMealConfig"
-    >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.app.donatina.donatina.RecordMealConfig"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/til_people_count"
@@ -23,8 +23,10 @@
 
         <EditText
             android:id="@+id/et_people_count"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:hint="Número de pessoas"
             android:inputType="number"
             android:textColor="@android:color/white"
@@ -42,8 +44,10 @@
 
         <EditText
             android:id="@+id/et_meal_count"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:hint="Número de refeições"
             android:inputType="number"
             android:textColor="@android:color/white"
@@ -61,8 +65,10 @@
 
         <EditText
             android:id="@+id/et_max_price"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:hint="Total a gastar"
             android:inputType="number"
             android:textColor="@android:color/white"
@@ -70,11 +76,19 @@
             android:textSize="20sp"/>
     </android.support.design.widget.TextInputLayout>
 
-    <Button
+
+    <com.spark.submitbutton.SubmitButton
         android:id="@+id/bt_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="Tudo Pronto"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/til_max_price"
+        android:layout_centerHorizontal="true"
+        android:text="PRONTO"
+        android:textColor="#00c5ff"
+        app:sub_btn_background="@color/colorPrimary"
+        app:sub_btn_duration="3000"
+        app:sub_btn_line_color="#00c5ff"
+        app:sub_btn_ripple_color="@color/white"
+        app:sub_btn_tick_color="@color/white" />
+
 </RelativeLayout>

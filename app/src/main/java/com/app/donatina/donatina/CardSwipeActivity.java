@@ -2,6 +2,7 @@ package com.app.donatina.donatina;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -137,7 +138,9 @@ public class CardSwipeActivity extends Activity {
             mTvTotalMeals.setText("Faltam "+ mTotalMeals+" refeições");
         }else{
             makeToast(this, "Completo!!");
-        }
+            Intent myIntent = new Intent(this, RecipesList.class);
+            this.startActivity(myIntent);
+    }
     }
 
     private void getDummyData(ArrayList<Card> al) {

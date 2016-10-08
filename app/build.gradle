@@ -35,6 +35,7 @@ dependencies {
     compile 'com.sackcentury:shinebutton:0.1.6'
 
     compile 'com.github.ybq:Android-SpinKit:1.1.0'
+    compile 'me.spark:submitbutton:1.0.1'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
