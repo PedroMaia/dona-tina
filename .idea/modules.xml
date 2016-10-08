@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DonaTina.iml" filepath="$PROJECT_DIR$/DonaTina.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dona-tina.iml" filepath="$PROJECT_DIR$/dona-tina.iml" />
     </modules>
   </component>
 </project>

@@ -11,7 +11,12 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Intent myIntent = new Intent(this, CardSwipeActivity.class);
+
+
+        //Intent myIntent = new Intent(this, CardSwipeActivity.class);
+        //Intent myIntent = new Intent(this, HomeScreen.class);
+
+        Intent myIntent = new Intent(this, RecordMealConfig.class);
         this.startActivity(myIntent);
     }
 }
