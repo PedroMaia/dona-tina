@@ -19,12 +19,13 @@
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_gravity="center"
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/card_image"
+                android:id="@+id/iv_food"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:paddingLeft="16dp"
@@ -39,7 +40,7 @@
             <TextView
                 android:id="@+id/tv_title"
                 android:textSize="24.0sp"
-                android:paddingTop="6dp"
+                android:paddingTop="4dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:textStyle="bold"

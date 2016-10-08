@@ -8,14 +8,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 /**
+ * Cards adapter
+ *
  * @author Pedro Maia <pedromaia@nutrium.io>
  * @version 1.0
  * @since 07/10/2016.
  */
-
 public class CardsAdapter extends ArrayAdapter<Card> {
     private final ArrayList<Card> cards;
     private final LayoutInflater layoutInflater;
@@ -30,10 +33,11 @@ public class CardsAdapter extends ArrayAdapter<Card> {
     public View getView(int position, View convertView, ViewGroup parent) {
         Card card = cards.get(position);
         View view = layoutInflater.inflate(R.layout.item, parent, false);
-        ((ImageView)view.findViewById(R.id.card_image)).setImageResource(card.imageId);
-        ((TextView)view.findViewById(R.id.tv_title)).setText("Arroz de pato");
-        ((TextView)view.findViewById(R.id.tv_description)).setText("Refeição de " +
-                "carne (50 min)");
+        ImageView iv_food= (ImageView) view.findViewById(R.id.iv_food);
+
+        Picasso.with(getContext()).load(card.imageUrl).into(iv_food);
+        ((TextView)view.findViewById(R.id.tv_title)).setText(card.name);
+        ((TextView)view.findViewById(R.id.tv_description)).setText(card.description);
         return view;
     }
 

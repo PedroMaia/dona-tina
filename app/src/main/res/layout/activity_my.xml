@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_top_text"
         android:layout_width="match_parent"
         android:textStyle="bold"
         android:layout_height="70dp"
@@ -37,28 +38,28 @@
 
         <com.sackcentury.shinebuttonlib.ShineButton
             android:id="@+id/left"
-            shine_animation_duration="10"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginRight="38dp"
-            android:src="@android:color/darker_gray"
-            app:allow_random_color="false"
-            app:btn_color="@android:color/darker_gray"
-            app:btn_fill_color="@android:color/holo_green_dark"
-            app:siShape="@raw/heart"/>
-
-        <com.sackcentury.shinebuttonlib.ShineButton
-            android:id="@+id/right"
             shine_animation_duration="1"
             android:layout_width="38dp"
             android:layout_height="38dp"
-            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
             android:src="@android:color/darker_gray"
             app:allow_random_color="false"
             app:btn_color="@android:color/darker_gray"
             app:btn_fill_color="@android:color/holo_red_dark"
             app:siShape="@drawable/dislike_360"/>
+
+        <com.sackcentury.shinebuttonlib.ShineButton
+            android:id="@+id/right"
+            shine_animation_duration="10"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="38dp"
+            android:src="@android:color/darker_gray"
+            app:allow_random_color="false"
+            app:btn_color="@android:color/darker_gray"
+            app:btn_fill_color="@android:color/holo_green_dark"
+            app:siShape="@raw/heart"/>
     </LinearLayout>
 </LinearLayout>
 

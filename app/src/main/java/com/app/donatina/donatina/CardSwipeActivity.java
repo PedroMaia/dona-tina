@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sackcentury.shinebuttonlib.ShineButton;
@@ -27,7 +28,8 @@ public class CardSwipeActivity extends Activity {
     private CardsAdapter arrayAdapter;
     private ShineButton mBtRigh;
     private ShineButton mBtLeft;
-
+    private TextView mTvTotalMeals;
+    private int mTotalMeals;
     private int i;
 
     @InjectView(R.id.card_stack_view)
@@ -38,8 +40,14 @@ public class CardSwipeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        mTotalMeals = 3;
+
         mBtLeft = (ShineButton) findViewById(R.id.left);
         mBtRigh = (ShineButton) findViewById(R.id.right);
+        mTvTotalMeals = (TextView) findViewById(R.id.tv_top_text);
+        updateTotalElements();
+
+        ButterKnife.inject(this);
 
         mBtRigh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,11 +62,6 @@ public class CardSwipeActivity extends Activity {
                 swipeCardView.throwLeft();
             }
         });
-
-        //new buttons
-
-        ButterKnife.inject(this);
-
 
         al = new ArrayList<>();
         getDummyData(al);
@@ -85,6 +88,9 @@ public class CardSwipeActivity extends Activity {
                     public void run() {
                         mBtRigh.setChecked(false);
                     }}, 800);
+
+                mTotalMeals--;
+                updateTotalElements();
             }
 
             @Override
@@ -126,65 +132,22 @@ public class CardSwipeActivity extends Activity {
 
     }
 
-    private void getDummyData(ArrayList<Card> al) {
-        Card card = new Card();
-        card.name = "Card1";
-        card.imageId = R.drawable.food_demo;
-        al.add(card);
+    private void updateTotalElements() {
+        if(mTotalMeals>0){
+            mTvTotalMeals.setText("Faltam "+ mTotalMeals+" refeições");
+        }else{
+            makeToast(this, "Completo!!");
+        }
+    }
 
-        Card card2 = new Card();
-        card2.name = "Card2";
-        card2.imageId = R.drawable.food_demo;
-        al.add(card2);
-        Card card3 = new Card();
-        card3.name = "Card3";
-        card3.imageId = R.drawable.food_demo;
-        al.add(card3);
-        Card card4 = new Card();
-        card4.name = "Card4";
-        card4.imageId = R.drawable.food_demo;
-        al.add(card4);
-        Card card5 = new Card();
-        card5.name = "Card5";
-        card5.imageId = R.drawable.food_demo;
-        al.add(card5);
-        Card card56 = new Card();
-        card56.name = "Card6";
-        card56.imageId = R.drawable.food_demo;
-        al.add(card56);
-        Card card7 = new Card();
-        card7.name = "Card7";
-        card7.imageId = R.drawable.food_demo;
-        al.add(card7);
-        Card card8 = new Card();
-        card8.name = "Card8";
-        card8.imageId = R.drawable.food_demo;
-        al.add(card8);
-        Card card9 = new Card();
-        card9.name = "Card9";
-        card9.imageId = R.drawable.food_demo;
-        al.add(card9);
-        Card card10 = new Card();
-        card10.name = "Card10";
-        card10.imageId = R.drawable.food_demo;
-        al.add(card10);
-        Card card11 = new Card();
-        card11.name = "Card11";
-        card11.imageId = R.drawable.food_demo;
-        al.add(card11);
+    private void getDummyData(ArrayList<Card> al) {
+        for(int i= 0; i<10;i++ ){
+            Card card = new Card("Arroz de pato", "Almoço (50 min)", "http://24kassets.fichub.com/24kitchen_pt_pt/recipe/123859.660x372.jpg");
+            this.al.add(card);
+        }
     }
 
     static void makeToast(Context ctx, String s){
         Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
     }
-/*
-    @OnClick(R.id.left)
-    public void left() {
-        swipeCardView.throwLeft();
-    }*/
-/*
-    @OnClick(R.id.right)
-    public void right() {
-        swipeCardView.throwRight();
-    }*/
 }
